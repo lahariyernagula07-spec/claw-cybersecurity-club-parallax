@@ -1,165 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=" Cybersecurity Club - Secure. Learn. Protect. Innovate.">
-    <title>Cybersecurity Club</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cyber Club — a student-driven cybersecurity community.">
+  <title>Cyber Club | Cybersecurity Community</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="loader" id="loader"><span></span><b>CYBER CLUB</b></div>
 
-    <div class="loader" id="loader">
-        <span></span>
-        <p>LOADING</p>
-    </div>
+  <header class="navbar" id="navbar">
+    <a class="brand" href="#home" aria-label="Cyber Club home"><span class="brand-mark">◈</span><span><strong>CYBER CLUB</strong><small>CYBERSECURITY COMMUNITY</small></span></a>
+    <nav id="navMenu">
+      <a href="#home" class="active">Home</a><a href="#about">About</a><a href="#domains">Cyber World</a><a href="#tools">Tools</a><a href="#events">Events</a><a href="#team">Team</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Join the Club <span>→</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  </header>
 
-    <header class="nav">
-        <a href="#home" class="logo" aria-label="Home">⚡</a>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid"></div><div class="hero-glow glow-one"></div><div class="hero-glow glow-two"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow">SECURE • LEARN • PROTECT • INNOVATE</p>
+        <h1>CYBER <span>CLUB</span></h1>
+        <p class="hero-subtitle">CYBERSECURITY COMMUNITY</p>
+        <p class="hero-text">A student-driven community exploring cybersecurity through practical learning, workshops, projects, competitions and awareness.</p>
+        <div class="hero-actions"><a class="btn primary" href="#events">Explore Events <span>→</span></a><a class="btn secondary" href="#about">Discover the Club</a></div>
+        <div class="stats"><div><strong>0</strong><span>MEMBERS</span></div><div><strong>0</strong><span>PROJECTS</span></div><div><strong>0</strong><span>COMPETITIONS</span></div><div><strong>0</strong><span>WORKSHOPS</span></div></div>
+      </div>
 
-        <nav id="navMenu">
-            <a href="#home">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#domains">DOMAINS</a>
-            <a href="#mission">MISSION</a>
-            <a href="#team">TEAM</a>
-            <a href="#contact">CONTACT</a>
-        </nav>
+      <div class="hero-visual" data-parallax="0.10">
+        <div class="radar"><div class="radar-ring r1"></div><div class="radar-ring r2"></div><div class="radar-ring r3"></div><div class="radar-line"></div><i></i><i></i><i></i><i></i></div>
+        <div class="hacker-card"><img src="assets/hacker.png" alt="Hooded cybersecurity analyst working on a laptop"></div>
+      </div>
+      <a class="scroll-cue" href="#about">SCROLL TO EXPLORE <span>↓</span></a>
+    </section>
 
-        <a href="#contact" class="navBtn">JOIN THE MISSION</a>
-        <button id="menuButton" aria-label="Open menu">☰</button>
-    </header>
+    <section class="section about" id="about">
+      <div class="section-head reveal"><p class="eyebrow">01 / ABOUT US</p><h2>Building the <span>defenders</span> of tomorrow.</h2></div>
+      <div class="about-layout">
+        <div class="about-intro reveal"><p>Cyber Club is a student community focused on learning cybersecurity by doing. We create a space where beginners and enthusiasts can learn together, experiment responsibly and grow practical security skills.</p><div class="quote">“Learn together. Build responsibly. Defend intelligently.”</div></div>
+        <div class="about-cards"><article class="info-card reveal"><span>01</span><h3>Learn Together</h3><p>Peer-driven learning, knowledge sharing and beginner-friendly sessions.</p></article><article class="info-card reveal"><span>02</span><h3>Build Skills</h3><p>Turn concepts into practical skills through tools, projects and challenges.</p></article><article class="info-card reveal"><span>03</span><h3>Stay Aware</h3><p>Understand cyber threats and promote responsible digital behaviour.</p></article></div>
+      </div>
+    </section>
 
-    <main>
-        <section class="hero" id="home">
-            <div class="heroImage parallax" data-speed="0.12"></div>
-            <div class="grid parallax" data-speed="0.18"></div>
-            <div class="heroOverlay"></div>
+    <section class="section domains" id="domains">
+      <div class="section-head reveal"><p class="eyebrow">02 / CYBER WORLD</p><h2>Explore the <span>cyber world.</span></h2><p>Explore core areas of cybersecurity and build a strong foundation through hands-on learning.</p></div>
+      <div class="domain-grid">
+        <article class="domain-card reveal"><b>01</b><div class="domain-icon">⌁</div><h3>Network Security</h3><p>Networks, protocols, monitoring and defensive security.</p><span>EXPLORE →</span></article>
+        <article class="domain-card reveal"><b>02</b><div class="domain-icon">◎</div><h3>Web Security</h3><p>Web vulnerabilities, secure development and application security.</p><span>EXPLORE →</span></article>
+        <article class="domain-card reveal"><b>03</b><div class="domain-icon">◉</div><h3>OSINT</h3><p>Open-source intelligence for research and security investigations.</p><span>EXPLORE →</span></article>
+        <article class="domain-card reveal"><b>04</b><div class="domain-icon">☁</div><h3>Cloud Security</h3><p>Protect cloud infrastructure, identities, data and applications.</p><span>EXPLORE →</span></article>
+        <article class="domain-card reveal"><b>05</b><div class="domain-icon">◌</div><h3>Digital Forensics</h3><p>Evidence, investigation workflows and digital incident analysis.</p><span>EXPLORE →</span></article>
+        <article class="domain-card reveal"><b>06</b><div class="domain-icon">▣</div><h3>Cryptography</h3><p>Protect information using encryption, hashing and secure algorithms.</p><span>EXPLORE →</span></article>
+      </div>
+    </section>
 
-            <div class="heroContent parallax" data-speed="0.035">
-                <div class="eyebrow">SECURE • LEARN • PROTECT • INNOVATE</div>
+    <section class="section tools" id="tools">
+      <div class="section-head reveal"><p class="eyebrow">03 / CYBER TOOLS</p><h2>Tools we <span>explore.</span></h2><p>Popular security tools used for learning, analysis, testing and defensive research.</p></div>
+      <div class="tool-grid">
+        <article class="tool-card reveal"><div class="tool-symbol">N</div><div><h3>Nmap</h3><p>Network scanning and discovery tool for security auditing.</p></div><span>LEARN →</span></article>
+        <article class="tool-card reveal"><div class="tool-symbol shark">W</div><div><h3>Wireshark</h3><p>Network protocol analyzer for troubleshooting and analysis.</p></div><span>LEARN →</span></article>
+        <article class="tool-card reveal"><div class="tool-symbol burp">B</div><div><h3>Burpsuite</h3><p>Web vulnerability scanner and application security testing tool.</p></div><span>LEARN →</span></article>
+        <article class="tool-card reveal"><div class="tool-symbol meta">M</div><div><h3>Metasploit</h3><p>Security testing framework for controlled penetration testing.</p></div><span>LEARN →</span></article>
+        <article class="tool-card reveal"><div class="tool-symbol nessus">N</div><div><h3>Nessus</h3><p>Vulnerability scanner for identifying security weaknesses.</p></div><span>LEARN →</span></article>
+      </div>
+    </section>
 
-          <h1 class="cyber-heading">
-    CYBER SECURITY CLUB
-</h1>
-            </div>
+    <section class="mission-band"><div class="mission-inner reveal"><p class="eyebrow">OUR MISSION</p><h2>SECURE <span>•</span> LEARN <span>•</span> PROTECT <span>•</span> INNOVATE</h2><p>We believe cybersecurity is learned through curiosity, collaboration and practical experience.</p></div></section>
 
-            <div class="hud status parallax" data-speed="-0.055">
-                <small>SYSTEM STATUS</small>
-                <h2>SECURE</h2>
-                <p>THREAT LEVEL: <em>LOW</em></p>
-                <p>NETWORK: <em>ENCRYPTED</em></p>
-            </div>
+    <section class="section events" id="events">
+      <div class="section-head events-head reveal"><div><p class="eyebrow">04 / EVENTS</p><h2>Exciting <span>events.</span></h2></div><div class="filters"><button class="filter active" data-filter="all">All Events</button><button class="filter" data-filter="upcoming">Upcoming</button><button class="filter" data-filter="awareness">Awareness</button></div></div>
+      <div class="event-grid"><article class="event-card reveal" data-type="upcoming"><div class="event-art art-one"><span>EVENT 01</span><b>01</b></div><div class="event-body"><div class="badge">UPCOMING</div><h3>Club Inagurations</h3><p>Join us for the Cyber Club inauguration and the beginning of our cybersecurity journey.</p><div class="event-meta"><span>📅 Date to be announced</span><span>◉ On Campus</span></div><a href="#contact">View Details →</a></div></article><article class="event-card reveal" data-type="awareness"><div class="event-art art-two"><span>EVENT 02</span><b>02</b></div><div class="event-body"><div class="badge">AWARENESS</div><h3>Cybercrime Awareness Session</h3><p>Learn about cybercrime, digital safety and practical ways to stay secure online.</p><div class="event-meta"><span>📅 Date to be announced</span><span>◉ Session</span></div><a href="#contact">View Details →</a></div></article></div>
+    </section>
 
-            <div class="hud modules parallax" data-speed="0.045">
-                <small>ACTIVE MODULES</small>
-                <p>01_NETWORK_SECURITY <em>●</em></p>
-                <p>02_OSINT <em>●</em></p>
-                <p>03_WEB_SECURITY <em>●</em></p>
-                <p>04_INCIDENT_RESPONSE <em>●</em></p>
-            </div>
+    <section class="section team" id="team">
+      <div class="section-head reveal"><p class="eyebrow">05 / TEAM</p><h2>Our <span>committee.</span></h2><p>Coordinator profiles will be added as the official details are finalized.</p></div>
+      <div class="team-groups"><div class="team-group reveal"><div class="group-title"><span>01</span><h3>Faculty Coordinators</h3></div><div class="profile-grid"><div class="profile-empty"><div class="avatar">+</div><strong>Profile to be added</strong><small>Faculty Coordinator</small></div><div class="profile-empty"><div class="avatar">+</div><strong>Profile to be added</strong><small>Faculty Coordinator</small></div></div></div><div class="team-group reveal"><div class="group-title"><span>02</span><h3>Student Coordinators</h3></div><div class="profile-grid"><div class="profile-empty"><div class="avatar">+</div><strong>Profile to be added</strong><small>Student Coordinator</small></div><div class="profile-empty"><div class="avatar">+</div><strong>Profile to be added</strong><small>Student Coordinator</small></div><div class="profile-empty"><div class="avatar">+</div><strong>Profile to be added</strong><small>Student Coordinator</small></div></div></div></div>
+    </section>
 
-            <div class="stats">
-                <div class="stat"><strong>0</strong><span>MEMBERS</span></div>
-                <div class="stat"><strong>0</strong><span>PROJECTS</span></div>
-                <div class="stat"><strong>0</strong><span>COMPETITIONS</span></div>
-                <div class="stat"><strong>0</strong><span>WORKSHOPS</span></div>
-            </div>
-
-            <div class="scroll">
-                ↓
-                <small>SCROLL DOWN</small>
-            </div>
-        </section>
-
-        <section class="section" id="about">
-            <label>01 / ABOUT</label>
-            <h2>BUILDING THE <strong>DEFENDERS.</strong></h2>
-            <p>RaghusClaw Cybersecurity Club brings together students interested in cybersecurity, networking, digital forensics and security research.</p>
-            <div class="terminal">
-                <div><b>root@raghusclaw:~$</b> whoami</div>
-                <p>cybersecurity enthusiast</p>
-                <div><b>root@raghusclaw:~$</b> mission</div>
-                <p>learn • build • defend</p>
-            </div>
-        </section>
-
-        <section class="section" id="domains">
-            <label>02 / DOMAINS</label>
-            <h2>EXPLORE THE <strong>CYBER WORLD.</strong></h2>
-            <div class="cards">
-                <article><span>01</span><h3>NETWORK SECURITY</h3><p>Understand networks, protocols, monitoring and defensive security.</p></article>
-                <article><span>03</span><h3>OSINT</h3><p>Discover how open-source intelligence can support cybersecurity investigations.</p></article>
-                <article><span>03</span><h3>WEB SECURITY</h3><p>Explore web vulnerabilities, secure development and application security.</p></article>
-            </div>
-        </section>
-
-        <section class="section missionTools" id="mission">
-            <div class="missionPanel">
-                <label>03 / MISSION</label>
-                <h2>SECURE. <strong>LEARN.</strong> PROTECT.</h2>
-                <p>Our mission is to create a practical cybersecurity community where students learn through projects, workshops, competitions and real-world challenges.</p>
-            </div>
-
-            <div class="toolsPanel" id="tools">
-                <label>TOOLS</label>
-                <h2>CYBER <strong>TOOLS.</strong></h2>
-                <div class="toolsGrid">
-                    <article class="toolBlock"><span>01</span><h3>WIRESHARK</h3><p>Network traffic analysis and packet inspection.</p></article>
-                    <article class="toolBlock"><span>02</span><h3>NMAP</h3><p>Network discovery and security auditing.</p></article>
-                    <article class="toolBlock"><span>03</span><h3>BURP SUITE</h3><p>Web application security testing.</p></article>
-                    <article class="toolBlock"><span>04</span><h3>METASPLOIT</h3><p>Security testing and vulnerability research.</p></article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="events">
-            <label>04 / UPCOMING EVENTS</label>
-            <h2>UPCOMING <strong>EVENTS.</strong></h2>
-            <div class="glassGrid">
-                <article class="glassBlock">
-                    <span>01</span>
-                    <h3>CLUB INAGURATIONS</h3>
-                    <p>Join us for the Cyber Security Club inauguration and the beginning of our cybersecurity journey.</p>
-                </article>
-                <article class="glassBlock">
-                    <span>02</span>
-                    <h3>CYBERCRIME AWARENESS SESSION</h3>
-                    <p>Learn about cybercrime, digital safety and practical ways to stay secure online.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="section" id="team">
-            <label>05 / COMMITTEE MEMBERS</label>
-            <h2>COMMITTEE <strong>MEMBERS.</strong></h2>
-            <div class="glassGrid committeeGrid">
-                <article class="glassBlock emptyBlock">
-                    <span>01</span>
-                    <h3>FACULTY COORDINATOR</h3>
-                    <div class="emptySpace"></div>
-                </article>
-                <article class="glassBlock emptyBlock">
-                    <span>02</span>
-                    <h3>STUDENT COORDINATOR</h3>
-                    <div class="emptySpace"></div>
-                </article>
-            </div>
-        </section>
-
-        <section class="section center" id="contact">
-            <label>06 / CONTACT</label>
-            <h2>JOIN THE <strong>MISSION.</strong></h2>
-            <p>Ready to learn cybersecurity and build something meaningful?</p>
-            <a href="mailto:contact@raghusclaw.com" class="primary contactButton">CONTACT THE CLUB →</a>
-        </section>
-    </main>
-
-    <footer>© 2026 CYBERSECURITY CLUB • SECURE • LEARN • PROTECT • INNOVATE</footer>
-    <script src="script.js"></script>
+    <section class="contact" id="contact"><div class="contact-glow"></div><div class="contact-inner"><div class="contact-copy reveal"><p class="eyebrow">06 / CONTACT</p><h2>Want to connect<br>with <span>us?</span></h2><p>Reach out and become part of a student-driven cybersecurity community.</p><div class="contact-lines"><span>✉ Club email — to be added</span><span>◉ College / Campus — to be added</span></div></div><form class="contact-form glass reveal" id="contactForm"><label>Your Name<input type="text" required placeholder="What's your name?"></label><label>Your Email<input type="email" required placeholder="What's your email?"></label><label>Your Message<textarea required rows="5" placeholder="Tell us how we can help..."></textarea></label><button class="btn primary" type="submit">Send Message <span>→</span></button><p class="form-note" id="formNote"></p></form></div></section>
+  </main>
+  <footer><div class="footer-brand"><span class="brand-mark">◈</span><div><strong>CYBER CLUB</strong><small>CYBERSECURITY COMMUNITY</small></div></div><p>Empowering students to learn, build and defend.</p><span>© 2026 Cyber Club. All rights reserved.</span></footer>
+  <script src="script.js"></script>
 </body>
 </html>

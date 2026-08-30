@@ -1,17 +1,12 @@
-# RaghusClaw Cybersecurity Club - Montserrat Updated
+# Cyber Club Frontend
 
-A responsive static cybersecurity club website using HTML, CSS and JavaScript.
+Frontend-only Cyber Club website. The existing design, content, sections, radar and animations are preserved; only the hero hacker image has been replaced with a transparent-background hacker + laptop image.
 
-## Updated in this version
-- Clean hacker hero background without the duplicated screenshot text/UI.
-- Hacker positioned on the right/center-right so the main HTML heading stays readable.
-- Smooth mouse and scroll parallax animation for the hacker image and left text.
-- Montserrat typography.
-- Upcoming Events glassmorphism blocks and Committee Members glass blocks.\n- Responsive navigation and mobile layout.
-- Loading screen displays only `LOADING`.
+## Run
+Open `index.html` directly, or serve the folder with any static server.
 
-## Run locally
-Open `index.html` directly in a browser, or use VS Code Live Server.
-
-## Deploy
-Push the folder contents to the `main` branch of the GitHub repository and connect that repository to Vercel as a static site.
+## Vercel
+Framework Preset: Other
+Build Command: empty
+Output Directory: empty
+Root Directory: `./`
