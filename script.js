@@ -15,6 +15,28 @@
   window.addEventListener('load',function(){setTimeout(closeIntro,4200)});
   var loader=document.getElementById('loader');
   if(loader){loader.classList.add('hide');}
+  /* Terminal directory navigation */
+  var terminalCd=document.getElementById('terminalCd');
+  var cdMenu=document.getElementById('cdMenu');
+  var terminalPath=document.getElementById('terminalPath');
+  var terminalCommandPath=document.getElementById('terminalCommandPath');
+  var terminalCommandText=document.getElementById('terminalCommandText');
+  var terminalDirectories={home:'home',about:'about','cyber-world':'cyber-world',tools:'tools',events:'events',team:'team',contact:'contact'};
+  function goToDirectory(dir){
+    var target=document.getElementById(dir);
+    if(!target){return;}
+    var currentPath=terminalPath.textContent;
+    terminalCommandPath.textContent=currentPath;
+    terminalCommandText.textContent='cd '+terminalDirectories[dir];
+    terminalPath.textContent='~/'+terminalDirectories[dir];
+    cdMenu.classList.remove('open');
+    terminalCd.classList.remove('active');
+    target.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  terminalCd.addEventListener('click',function(e){e.stopPropagation();cdMenu.classList.toggle('open');terminalCd.classList.toggle('active')});
+  cdMenu.querySelectorAll('button').forEach(function(btn){btn.addEventListener('click',function(){goToDirectory(btn.getAttribute('data-dir'))})});
+  document.addEventListener('click',function(e){if(!cdMenu.contains(e.target)&&e.target!==terminalCd){cdMenu.classList.remove('open');terminalCd.classList.remove('active')}});
+
   var nav=document.getElementById('navbar'), menu=document.getElementById('menuBtn'), navMenu=document.getElementById('navMenu');
   menu.addEventListener('click',function(){navMenu.classList.toggle('open')});
   document.querySelectorAll('#navMenu a').forEach(function(link){link.addEventListener('click',function(){navMenu.classList.remove('open')})});

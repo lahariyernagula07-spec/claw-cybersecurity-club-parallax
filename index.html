@@ -35,6 +35,24 @@
     </div>
   </div>
   <div class="loader" id="loader"><span></span><b>CYBER CLUB</b></div>
+  <div class="terminal-window" id="terminalWindow" aria-label="Kali Linux style Cyber Club terminal">
+  <div class="terminal-shell" id="terminalShell" aria-label="Cyber Club terminal interface">
+    <div class="terminal-bar">
+      <div class="terminal-lights"><i></i><i></i><i></i></div>
+      <div class="terminal-title"><span>root@cyber-club</span><b>:</b><span id="terminalPath">~/home</span><strong>$</strong></div>
+      <button class="terminal-cd" id="terminalCd" type="button">cd <span>▾</span></button>
+      <div class="cd-menu" id="cdMenu" role="menu">
+        <button type="button" data-dir="home">cd ~/home</button>
+        <button type="button" data-dir="about">cd ~/about</button>
+        <button type="button" data-dir="cyber-world">cd ~/cyber-world</button>
+        <button type="button" data-dir="tools">cd ~/tools</button>
+        <button type="button" data-dir="events">cd ~/events</button>
+        <button type="button" data-dir="team">cd ~/team</button>
+        <button type="button" data-dir="contact">cd ~/contact</button>
+      </div>
+    </div>
+    <div class="terminal-command"><span>root@cyber-club</span><b>:</b><span id="terminalCommandPath">~/home</span><strong>$</strong><span class="terminal-command-text" id="terminalCommandText">cd home</span><span class="terminal-cursor"></span></div>
+  </div>
 
   <header class="navbar" id="navbar">
     <a class="brand" href="#home" aria-label="Cyber Club home"><span class="brand-mark">◈</span><span><strong>CYBER CLUB</strong><small>CYBERSECURITY COMMUNITY</small></span></a>

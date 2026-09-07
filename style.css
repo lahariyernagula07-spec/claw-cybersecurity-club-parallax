@@ -46,3 +46,222 @@ body.intro-active{overflow:hidden}.intro.is-skipped .intro-center,.intro.is-skip
 @keyframes introBarPulse{from{transform:scaleY(.55);opacity:.4}to{transform:scaleY(1.15);opacity:1}}
 @media(max-width:760px){.intro-corners{inset:6%}.intro-corners i{width:28px;height:28px}.intro-bars{right:5%}.intro-beam{height:11vh}}
 @media(prefers-reduced-motion:reduce){.intro-beam,.intro-ring.ring-c,.intro-pulse,.intro-corners,.intro-bars,.intro-bars i{animation:none!important}.intro-pulse,.intro-corners,.intro-bars{opacity:1}.intro-bars i{transform:none}}
+
+/* KALI-LINUX-STYLE TERMINAL EXPERIENCE — keeps existing page layout/content intact */
+:root{--terminal-cyan:#55d8ff;--terminal-blue:#258dff;--terminal-bg:rgba(2,8,15,.88)}
+body{background:#02060c}
+.terminal-shell{position:fixed;z-index:1000;left:22px;right:22px;top:14px;pointer-events:none;font-family:'Space Grotesk','Inter',sans-serif;filter:drop-shadow(0 10px 28px rgba(0,0,0,.28))}
+.terminal-bar{height:42px;display:flex;align-items:center;gap:14px;padding:0 13px;border:1px solid rgba(99,184,255,.22);border-radius:11px 11px 5px 5px;background:linear-gradient(180deg,rgba(11,22,34,.94),rgba(3,10,18,.92));backdrop-filter:blur(14px);box-shadow:inset 0 1px rgba(255,255,255,.04),0 0 30px rgba(37,141,255,.07);position:relative;pointer-events:auto}
+.terminal-lights{display:flex;gap:6px}.terminal-lights i{width:9px;height:9px;border-radius:50%;display:block;background:#5d6b78;box-shadow:0 0 7px rgba(120,180,220,.12)}.terminal-lights i:nth-child(2){background:#71808e}.terminal-lights i:nth-child(3){background:#8796a3}
+.terminal-title{display:flex;align-items:center;gap:6px;font:600 11px/1 'Space Grotesk',sans-serif;color:#c8e9ff;letter-spacing:.2px;min-width:0}.terminal-title span:last-of-type{color:var(--terminal-cyan);white-space:nowrap}.terminal-title b,.terminal-title strong,.terminal-command b,.terminal-command strong{color:#73caff}.terminal-title strong{margin-left:2px}.terminal-cd{margin-left:auto;border:1px solid rgba(75,177,255,.28);background:rgba(19,45,66,.48);color:#d8f2ff;border-radius:6px;padding:7px 10px;font:700 10px/1 'Space Grotesk',sans-serif;letter-spacing:.7px;cursor:pointer;transition:.22s}.terminal-cd:hover,.terminal-cd.active{border-color:rgba(85,216,255,.65);background:rgba(30,90,130,.45);box-shadow:0 0 18px rgba(37,141,255,.18)}.terminal-cd span{color:var(--terminal-cyan);margin-left:4px}
+.cd-menu{position:absolute;right:12px;top:48px;width:178px;padding:7px;border:1px solid rgba(85,216,255,.22);border-radius:9px;background:rgba(2,10,17,.96);backdrop-filter:blur(18px);box-shadow:0 18px 45px rgba(0,0,0,.5),0 0 25px rgba(37,141,255,.1);opacity:0;visibility:hidden;transform:translateY(-6px);transition:.2s}.cd-menu.open{opacity:1;visibility:visible;transform:translateY(0)}.cd-menu button{display:block;width:100%;border:0;background:transparent;color:#a9d4ed;text-align:left;padding:9px 10px;border-radius:5px;font:600 10px/1.1 'Space Grotesk',sans-serif;letter-spacing:.35px;cursor:pointer}.cd-menu button:hover{background:rgba(54,151,220,.12);color:#fff}.cd-menu button::first-letter{color:#55d8ff}
+.terminal-command{height:27px;margin:0 9px;padding:7px 11px 0;border-left:1px solid rgba(99,184,255,.16);border-right:1px solid rgba(99,184,255,.16);border-bottom:1px solid rgba(99,184,255,.11);border-radius:0 0 5px 5px;background:rgba(2,8,14,.72);color:#8fb9d1;font:600 9px/1 'Space Grotesk',sans-serif;letter-spacing:.25px;pointer-events:none;overflow:hidden}.terminal-command span:first-child{color:#71d2ff}.terminal-command span:nth-of-type(2){color:#55d8ff}.terminal-command-text{color:#d5e9f5;margin-left:5px}.terminal-cursor{display:inline-block;width:5px;height:10px;background:#62cfff;margin-left:5px;vertical-align:-2px;box-shadow:0 0 8px rgba(85,216,255,.55);animation:terminalBlink 1s steps(1) infinite}@keyframes terminalBlink{50%{opacity:0}}
+.navbar{top:78px!important}
+@media(max-width:760px){.terminal-shell{left:9px;right:9px;top:8px}.terminal-title{font-size:9px}.terminal-title span:first-child{display:none}.terminal-bar{height:38px}.terminal-command{margin:0 7px}.navbar{top:62px!important}.cd-menu{right:5px;width:166px}.terminal-command-text{font-size:8px}}
+
+/* =========================================================
+   FULL KALI-STYLE TERMINAL WINDOW
+   The entire Cyber Club website lives inside one terminal.
+   ========================================================= */
+body{
+  background:
+    radial-gradient(circle at 50% 0%,rgba(25,100,180,.12),transparent 34%),
+    #010305;
+  padding:18px;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:repeating-linear-gradient(to bottom,rgba(255,255,255,.012) 0,rgba(255,255,255,.012) 1px,transparent 1px,transparent 4px);
+  opacity:.22;
+  z-index:0;
+}
+.terminal-window{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:1500px;
+  min-height:calc(100vh - 36px);
+  margin:0 auto;
+  border:1px solid rgba(70,151,230,.38);
+  border-radius:13px;
+  overflow:hidden;
+  background:#020508;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,.8),
+    0 30px 100px rgba(0,0,0,.65),
+    0 0 70px rgba(16,113,206,.08);
+}
+.terminal-window:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border:1px solid rgba(255,255,255,.035);
+  border-radius:13px;
+  z-index:20;
+}
+.terminal-shell{
+  position:sticky;
+  top:0;
+  z-index:500;
+  height:auto;
+  background:#05080b;
+  border-bottom:1px solid rgba(72,150,220,.3);
+  box-shadow:0 8px 30px rgba(0,0,0,.42);
+}
+.terminal-bar{
+  min-height:43px;
+  padding:0 14px;
+  display:grid;
+  grid-template-columns:82px 1fr auto;
+  align-items:center;
+  gap:14px;
+  background:linear-gradient(180deg,#10151a,#080b0e);
+  border-bottom:1px solid rgba(255,255,255,.055);
+}
+.terminal-lights{
+  display:flex;
+  gap:7px;
+  align-items:center;
+}
+.terminal-lights i{
+  display:block;
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.12);
+  background:#26313b;
+}
+.terminal-lights i:first-child{background:#ff5f57}
+.terminal-lights i:nth-child(2){background:#febc2e}
+.terminal-lights i:nth-child(3){background:#28c840}
+.terminal-title{
+  justify-self:center;
+  font-family:"Space Grotesk",monospace;
+  font-size:11px;
+  letter-spacing:.2px;
+  color:#8fa5b8;
+}
+.terminal-title span:first-child,
+.terminal-title strong{color:#4db3ff}
+.terminal-title b{color:#66798a;margin:0 2px}
+.terminal-cd{
+  position:relative;
+  border:1px solid rgba(54,157,235,.4);
+  background:rgba(15,39,62,.72);
+  color:#65c1ff;
+  border-radius:6px;
+  padding:6px 10px;
+  font-family:Consolas,monospace;
+  font-size:11px;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.terminal-cd:hover,
+.terminal-cd.active{
+  background:#123250;
+  border-color:#45b3ff;
+  box-shadow:0 0 18px rgba(40,153,240,.2);
+}
+.terminal-cd span{margin-left:5px;color:#8fd3ff}
+.cd-menu{
+  position:absolute;
+  right:14px;
+  top:39px;
+  width:210px;
+  padding:7px;
+  display:none;
+  background:#060a0e;
+  border:1px solid rgba(69,164,237,.4);
+  border-radius:8px;
+  box-shadow:0 18px 45px rgba(0,0,0,.7),0 0 25px rgba(26,137,222,.12);
+}
+.cd-menu.open{display:block;animation:terminalMenuIn .16s ease-out}
+.cd-menu button{
+  display:block;
+  width:100%;
+  text-align:left;
+  padding:9px 10px;
+  border:0;
+  border-radius:5px;
+  background:transparent;
+  color:#9cb0c1;
+  font-family:Consolas,monospace;
+  font-size:10px;
+  cursor:pointer;
+}
+.cd-menu button:hover{
+  color:#fff;
+  background:rgba(39,135,211,.16);
+  box-shadow:inset 2px 0 #36a9ff;
+}
+@keyframes terminalMenuIn{
+  from{opacity:0;transform:translateY(-5px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.terminal-command{
+  min-height:37px;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  padding:0 16px;
+  background:#020507;
+  color:#8ba1b2;
+  font-family:Consolas,"Courier New",monospace;
+  font-size:10px;
+  border-bottom:1px solid rgba(255,255,255,.035);
+}
+.terminal-command span:first-child{color:#38a9ff}
+.terminal-command b{color:#718596}
+.terminal-command strong{color:#47b8ff}
+.terminal-command-text{
+  color:#d2e5f3;
+  margin-left:2px;
+}
+.terminal-cursor{
+  width:7px;
+  height:12px;
+  display:inline-block;
+  background:#3aaeff;
+  box-shadow:0 0 8px rgba(58,174,255,.7);
+  animation:terminalCursor .85s steps(1,end) infinite;
+}
+@keyframes terminalCursor{
+  0%,45%{opacity:1}
+  46%,100%{opacity:0}
+}
+.navbar{
+  position:sticky;
+  top:80px;
+  left:auto;
+  right:auto;
+  height:70px;
+  padding:0 4%;
+  background:rgba(2,5,8,.9);
+  border-bottom:1px solid rgba(83,155,214,.18);
+  backdrop-filter:blur(18px);
+}
+.navbar.scrolled{background:rgba(2,5,8,.96)}
+.hero{
+  min-height:calc(100vh - 80px);
+}
+.section,
+.contact{
+  scroll-margin-top:160px;
+}
+.intro{
+  z-index:9999;
+}
+@media(max-width:800px){
+  body{padding:7px}
+  .terminal-window{min-height:calc(100vh - 14px);border-radius:9px}
+  .terminal-bar{grid-template-columns:55px 1fr auto;gap:7px;padding:0 9px}
+  .terminal-title{font-size:9px}
+  .terminal-cd{font-size:10px;padding:6px 8px}
+  .terminal-command{padding:0 10px;font-size:9px;overflow:hidden;white-space:nowrap}
+  .navbar{top:74px;height:64px}
+  .cd-menu{right:8px}
+}
