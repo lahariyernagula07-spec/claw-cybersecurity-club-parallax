@@ -265,3 +265,35 @@ body:before{
   .navbar{top:74px;height:64px}
   .cd-menu{right:8px}
 }
+
+/* =========================================================
+   Floating terminal launcher — compact, side-mounted popup
+   Existing site typography, intro and parallax remain untouched.
+   ========================================================= */
+body{padding:0}
+.navbar{position:fixed;top:0;left:0;right:0;height:78px;padding:0 4%;background:rgba(2,4,7,.62);border-bottom:1px solid transparent;backdrop-filter:blur(16px);z-index:100}
+.navbar.scrolled{background:rgba(2,4,7,.9);border-bottom-color:var(--line)}
+.hero{min-height:100vh}
+.section,.contact{scroll-margin-top:95px}
+.terminal-float{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:1200;font-family:'Space Grotesk',Inter,sans-serif}
+.terminal-float-btn{position:relative;width:50px;height:50px;border:1px solid rgba(53,164,255,.55);border-radius:12px;background:linear-gradient(145deg,rgba(5,19,32,.97),rgba(2,8,15,.97));color:#58c5ff;display:grid;place-items:center;cursor:pointer;box-shadow:0 12px 35px rgba(0,0,0,.5),0 0 25px rgba(23,105,255,.15);transition:.25s ease}
+.terminal-float-btn:hover,.terminal-float-btn.active{transform:translateX(-3px);border-color:#4bc5ff;box-shadow:0 14px 38px rgba(0,0,0,.55),0 0 28px rgba(40,160,255,.25)}
+.terminal-icon{font-family:Consolas,'Courier New',monospace;font-size:14px;font-weight:800;letter-spacing:-1px;text-shadow:0 0 12px rgba(70,193,255,.75)}
+.terminal-float-pulse{position:absolute;right:4px;top:4px;width:6px;height:6px;border-radius:50%;background:#38d7a4;box-shadow:0 0 9px rgba(56,215,164,.8);animation:terminalPulse 1.8s ease-in-out infinite}
+@keyframes terminalPulse{50%{opacity:.35;transform:scale(.7)}}
+.terminal-popup{position:absolute;right:62px;top:50%;width:315px;transform:translateY(-50%) translateX(10px) scale(.97);transform-origin:right center;opacity:0;visibility:hidden;pointer-events:none;border:1px solid rgba(61,169,255,.5);border-radius:12px;overflow:hidden;background:rgba(3,8,14,.98);box-shadow:0 25px 75px rgba(0,0,0,.72),0 0 45px rgba(20,123,255,.16);backdrop-filter:blur(18px);transition:.22s ease}
+.terminal-popup.open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(-50%) translateX(0) scale(1)}
+.terminal-popup-head{height:38px;display:flex;align-items:center;padding:0 10px;border-bottom:1px solid rgba(83,155,214,.2);background:linear-gradient(180deg,#0c141c,#070c12)}
+.terminal-popup-head>span{display:flex;gap:5px;margin-right:10px}
+.terminal-popup-head i{width:8px;height:8px;border-radius:50%;display:block;background:#43515e}
+.terminal-popup-head i:first-child{background:#ff5f57}.terminal-popup-head i:nth-child(2){background:#febc2e}.terminal-popup-head i:nth-child(3){background:#28c840}
+.terminal-popup-head strong{font:600 10px/1 Consolas,'Courier New',monospace;color:#9bb1c3;letter-spacing:.5px}
+.terminal-popup-head button{margin-left:auto;border:0;background:transparent;color:#718597;font-size:19px;line-height:1;cursor:pointer;padding:2px 5px}.terminal-popup-head button:hover{color:#fff}
+.terminal-popup-body{padding:12px}
+.terminal-prompt{display:flex;align-items:center;gap:4px;padding:9px 10px;border:1px solid rgba(66,151,218,.17);border-radius:7px;background:#02060a;color:#8ea8bb;font:600 10px/1 Consolas,'Courier New',monospace;white-space:nowrap}
+.terminal-prompt span:first-child{color:#36c98b}.terminal-prompt span:nth-of-type(2){color:#55c9ff}.terminal-prompt b,.terminal-prompt strong{color:#708798}.terminal-popup-cursor{width:6px!important;height:11px;background:#4bc5ff;margin-left:3px;animation:terminalBlink .9s steps(1) infinite;box-shadow:0 0 9px rgba(75,197,255,.7)}
+.terminal-command-label{margin:14px 3px 8px;color:#58c5ff;font:700 10px/1 Consolas,'Courier New',monospace}.terminal-command-label span{color:#61788b;font-weight:400;margin-left:5px}
+.terminal-directories{display:grid;grid-template-columns:1fr;gap:4px}
+.terminal-directories button{width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px;border:1px solid transparent;border-radius:7px;background:transparent;color:#a9bfd0;text-align:left;padding:9px 10px;cursor:pointer;font-family:Consolas,'Courier New',monospace;transition:.18s ease}
+.terminal-directories button span{color:#d2e9f7;font-size:10px}.terminal-directories button small{font-size:8px;color:#667f91}.terminal-directories button:hover,.terminal-directories button.active{background:linear-gradient(90deg,rgba(29,117,187,.24),rgba(29,117,187,.07));border-color:rgba(58,164,237,.25);box-shadow:inset 2px 0 #38b8ff}.terminal-directories button:hover span,.terminal-directories button.active span{color:#55caff}.terminal-directories button:hover small,.terminal-directories button.active small{color:#9cc8df}
+@media(max-width:760px){.terminal-float{right:10px;top:auto;bottom:90px;transform:none}.terminal-float-btn{width:46px;height:46px;border-radius:11px}.terminal-popup{right:57px;top:auto;bottom:0;transform:translateX(10px) scale(.97);transform-origin:right bottom;width:min(300px,calc(100vw - 78px));max-height:72vh;overflow:auto}.terminal-popup.open{transform:translateX(0) scale(1)}.navbar{top:0;height:68px}.section,.contact{scroll-margin-top:82px}}
